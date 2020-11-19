@@ -17,8 +17,8 @@ Role Variables
 
 Dependencies
 ------------
-gantsign.ohmyzsh ansible role  
-https://galaxy.ansible.com/gantsign/oh-my-zsh
+- gantsign.ohmyzsh ansible role  
+- https://galaxy.ansible.com/gantsign/oh-my-zsh
 
 Example Playbook
 ----------------
@@ -29,6 +29,7 @@ Example Playbook
             vars:
               - username: user1
               - my_pass: P@55w0rd
+
 Would create a user named `user1` and set the `P@55w0rd`
 
 License
