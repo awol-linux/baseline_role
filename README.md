@@ -5,7 +5,7 @@ a role to provision a machine with a user who has a secure password. Then create
 
 Requirements
 ------------
-ansible < 2.8
+- ansible < 2.8
 
 Role Variables
 --------------
