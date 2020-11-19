@@ -10,10 +10,10 @@ ansible < 2.8
 Role Variables
 --------------
 
-my_pass: the password that will be given to any user provisioned (default: random).  
-username: the username that will be provisioned.  
-'working on this but' tmpfile: set tmpfile name  (default /tmp/password {{ based on date and time }}.  
-sudo_group: the group used for sudo authentication (default: wheel)
+- `my_pass:` the password that will be given to any user provisioned (default: random).  
+- `username:` the username that will be provisioned.  
+- `tmp_file:` set tmpfile name  (default /tmp/password{{ date and time }}. please note using a existing file will cause errors 
+- `sudo_group:` the group used for sudo authentication (default: wheel)
 
 Dependencies
 ------------
@@ -22,11 +22,15 @@ https://galaxy.ansible.com/gantsign/oh-my-zsh
 
 Example Playbook
 ----------------
-
     - hosts: all 
       become: true
       roles: 
           - role: basesetup
+            vars:
+              - username: user1
+              - my_pass: P@55w0rd
+Would create a user named `user1` and set the `P@55w0rd`
+
 License
 -------
 
