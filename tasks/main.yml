@@ -14,3 +14,10 @@
 - name: install base software arch 
   import_tasks: update-install-base-arch.yml
   when: ansible_facts['os_family'] == "Archlinux"
+
+- name: install ohmyzsh
+  include_role:
+    name: gantsign.oh-my-zsh
+  vars:
+          users:
+                  - username: test
