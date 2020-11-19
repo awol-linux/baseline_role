@@ -12,7 +12,7 @@ Role Variables
 
 - `my_pass:` the password that will be given to any user provisioned (default: random).  
 - `username:` the username that will be provisioned.  
-- `tmp_file:` set tmpfile name  (default /tmp/password{{ date and time }}. please note using a existing file will cause errors 
+- `tmp_file:` set tmpfile name  (default /tmp/password{{ date and time }}. Please note using a existing file will cause errors.
 - `sudo_group:` the group used for sudo authentication (default: wheel)
 
 Dependencies
