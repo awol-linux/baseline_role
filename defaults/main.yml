@@ -1,2 +1,5 @@
 ---
-# defaults file for basesetup
+# vars file for basesetup
+username: test
+my_pass: "{{ lookup('password', '/dev/null length=15 chars=ascii_letters') }}"
+sudo_group: wheel
