@@ -11,7 +11,7 @@ Role Variables
 --------------
 
 - `my_pass:` the password that will be given to any user provisioned (default: random).  
-- `username:` the username that will be provisioned.  
+- `username:` the username that will be provisioned (default: ansible-user).  
 - `tmp_file:` set tmpfile name  (default /tmp/password{{ date and time }}. Please note using a existing file will cause errors.
 - `sudo_group:` the group used for sudo authentication (default: wheel)
 
