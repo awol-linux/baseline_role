@@ -23,6 +23,13 @@ Dependencies
 Example Playbook
 ----------------
     - hosts: all 
+        become: true
+        roles: 
+            - role: basesetup
+
+To set a default password for all the users you can set a password variable like so.
+
+    - hosts: all 
       become: true
       roles: 
           - role: basesetup
