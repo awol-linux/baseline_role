@@ -7,6 +7,10 @@ Requirements
 ------------
 - ansible < 2.8
 
+Installation
+------------
+    ansible-galaxy install awol_linux.basesetup
+
 Role Variables
 --------------
 
