@@ -1,2 +1,0 @@
-- name: run script to install ohmyzsh 
-  script: oh-my-zsh-install.sh --unattended
