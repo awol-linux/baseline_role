@@ -19,5 +19,9 @@
   include_role:
     name: gantsign.oh-my-zsh
   vars:
+          become_user: "{{ username }}"
           users:
-                  - username: test
+                  - username: "{{ username }}"
+
+- name: install powerline_shell
+  import_tasks: powerline_shell.yml
