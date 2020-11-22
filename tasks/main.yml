@@ -1,5 +1,10 @@
 ---
 # tasks file for basesetup
+
+- name: add ansible user 
+  import_tasks: add-user.yml
+  when: create_ansible_user
+
 - name: create password file
   import_tasks: create-password-tempfile.yml
   delegate_to: 127.0.0.1
