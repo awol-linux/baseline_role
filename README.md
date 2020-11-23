@@ -57,7 +57,7 @@ If you would like to store your password securely you can use ansible-vault to c
           6463663465343738360a613138376333663030666161393337386466313234663734323438386439
           3561
     Encryption successful
-The take the vault field and use it as a variable. Also 
+Then take the vault field and use it as a variable. 
 
     - hosts: all 
         become: true
@@ -75,7 +75,7 @@ The take the vault field and use it as a variable. Also
                         6463663465343738360a613138376333663030666161393337386466313234663734323438386439
                         3561
 
-Then when you use the playbook make suer yo use the flag
+Then when you use the playbook make surr you use the flag.
 
     --ask-vault-pass
 
