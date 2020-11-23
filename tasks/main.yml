@@ -1,6 +1,14 @@
 ---
 # tasks file for basesetup
 
+- name: install base software Redhat
+  import_tasks: update-install-base-centos.yml
+  when: ansible_facts['os_family'] == "RedHat"
+
+- name: install base software arch 
+  import_tasks: update-install-base-arch.yml
+  when: ansible_facts['os_family'] == "Archlinux"
+
 - name: add ansible user 
   import_tasks: add-user.yml
   when: create_ansible_user
@@ -11,14 +19,6 @@
 
 - name: create user and password save data to "{{ tmp_file }}"
   import_tasks: password.yml
-
-- name: install base software Redhat
-  import_tasks: update-install-base-centos.yml
-  when: ansible_facts['os_family'] == "RedHat"
-
-- name: install base software arch 
-  import_tasks: update-install-base-arch.yml
-  when: ansible_facts['os_family'] == "Archlinux"
 
 - name: install ohmyzsh
   include_role:

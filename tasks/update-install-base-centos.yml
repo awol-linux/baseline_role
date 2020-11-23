@@ -6,7 +6,7 @@
 
 - name: update CentOS system
   dnf:
-          name: 'sudo, git, python3-pip, fish, zsh'
+          name: 'sudo, git, python3-pip, fish, zsh, openssh'
           state: latest
 
 - name: update
