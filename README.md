@@ -1,7 +1,7 @@
 Role Name
 =========
 
-a role to provision a machine with a user who has a secure password. Then create a csv file that can be imported into lastpass with all the user data.
+A role to provision a machine with a user who has a secure password. Then create a csv file that can be imported into lastpass with all the user data.
 
 Requirements
 ------------
