@@ -66,7 +66,7 @@ The take the vault field and use it as a variable. Also
         roles:
             - role: baseline-role
               vars:
-                    username: avremy 
+                    username: awol 
                     my_pass: !vault |
                         $ANSIBLE_VAULT;1.1;AES256
                         61623239303164633131666339313436666565386530333630326135373834343634313863363964
