@@ -1,4 +1,5 @@
-- blockinfile:
+- name: add powerline shell to zshrc
+  blockinfile:
     path: "/home/{{ username }}/.zshrc"
     block: |
             function powerline_precmd() {
