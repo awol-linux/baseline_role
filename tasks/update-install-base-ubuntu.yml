@@ -1,0 +1,14 @@
+- name: Update all packages to their latest version
+  apt:
+          name: "*"
+          state: latest # noqa 403
+
+- name: install specific packages
+  apt:
+          name: 'sudo, git, python3-pip, fish, zsh, openssh, sudo'
+          state: present
+
+- name: install powerline-shell
+  pip:
+          name: powerline-shell
+          state: present

@@ -12,7 +12,7 @@ platforms:
     image: docker.io/library/centos:latest
     pre_build_image: true
   - name: ubuntu 18.04
-    image: docker.io/library/ubuntu:18.04
+    image: docker.io/library/ubuntu:bionic
     pre_build_image: true
 provisioner:
   name: ansible
