@@ -10,7 +10,7 @@
 - name: update
   dnf:
           name: "*"
-          state: latest
+          state: latest # noqa 403
 - name: install powerline-shell
   pip:
           name: powerline-shell
