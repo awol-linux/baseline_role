@@ -6,7 +6,7 @@
 - name: update CentOS system
   dnf:
           name: 'sudo, git, python3-pip, fish, zsh, openssh, sudo'
-          state: present 
+          state: present
 - name: update
   dnf:
           name: "*"
