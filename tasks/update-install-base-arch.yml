@@ -5,6 +5,7 @@
 - name: install pip on arch based system
   pacman:
           name: 'sudo, git, python-pip, fish, zsh'
+          state: present
 - name: install powerline-shell
   pip:
           name: powerline-shell
