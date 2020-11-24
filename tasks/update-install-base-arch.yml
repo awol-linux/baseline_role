@@ -8,4 +8,3 @@
 - name: install powerline-shell
   pip:
           name: powerline-shell
-
