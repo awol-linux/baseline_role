@@ -8,7 +8,7 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: centos 8
+  - name: instance 
     image: docker.io/library/centos:latest
     pre_build_image: true
     #  - name: ubuntu 18.04
