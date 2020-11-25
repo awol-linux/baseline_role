@@ -1,8 +1,12 @@
 ---
 # tasks file for basesetup
+
+- name: set sudo groups
+  import_tasks: set-sudo-groups.yml
+
 - name: install base software Ubuntu
   import_tasks: update-install-base-ubuntu.yml
-  when: ansible_facts['os_family'] == "Ubuntu"
+  when: ansible_facts['os_family'] == "Debian"
 
 - name: install base software Redhat
   import_tasks: update-install-base-centos.yml

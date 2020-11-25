@@ -9,17 +9,19 @@ driver:
   name: docker 
 platforms:
   - name: ubuntu1804
-    image: docker.io/fnndsc/ubuntu-python3:18.04
+    image: docker.io/geerlingguy/docker-ubuntu1804-ansible
     pre_build_image: true
-    #    image: docker.io/pycontribs/ubuntu:18.04
-  - name: centos7
+  - name: centos8
     image: docker.io/library/centos:latest
+    pre_build_image: true  
+  - name: ubuntu2004
+    image: docker.io/geerlingguy/docker-ubuntu2004-ansible
     pre_build_image: true
 provisioner:
   name: ansible
-  ssh_connection:
-          pipeline: true
-  log: true
+  # ssh_connection:
+  #        pipeline: true
+  # log: true
 scenario:
   create_sequence:
     - dependency
