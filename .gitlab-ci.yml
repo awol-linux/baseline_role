@@ -11,7 +11,7 @@ before_script:
     musl-dev libffi-dev openssl-dev openssh sudo
   - docker info
   - python3 --version
-  - python3 -m pip install ansible==2.9 ansible-lint==4.3 molecule[docker] molecule[lint]
+  - python3 -m pip install ansible==2.9 ansible-lint==4.3 molecule[podman] molecule[lint]
   - ssh-keygen -f /root/.ssh/id_rsa -t rsa -N ''
   - ansible --version
   - molecule --version
