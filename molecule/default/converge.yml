@@ -4,4 +4,4 @@
   tasks:
     - name: "Include baseline-role"
       include_role:
-        name: "baseline-role"
+        name: "baseline_role"
