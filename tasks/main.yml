@@ -1,5 +1,8 @@
 ---
 # tasks file for basesetup
+- name: install base software Ubuntu
+  import_tasks: update-install-base-ubuntu.yml
+  when: ansible_facts['os_family'] == "Ubuntu"
 
 - name: install base software Redhat
   import_tasks: update-install-base-centos.yml
