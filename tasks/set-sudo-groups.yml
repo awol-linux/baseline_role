@@ -1,0 +1,9 @@
+- name: set sudo group for debian based systems
+  set_fact:
+      sudo_group: sudo
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: set sudo group for debian based systems
+  set_fact:
+      sudo_group: wheel
+  when: ansible_facts['os_family'] == "RedHat"
