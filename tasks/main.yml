@@ -18,7 +18,7 @@
 
 - name: add ansible user
   import_tasks: add-user.yml
-  when: create_ansible_user
+  when: create_ansible_user|bool
 
 - name: create password file
   import_tasks: create-password-tempfile.yml

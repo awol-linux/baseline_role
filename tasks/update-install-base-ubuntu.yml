@@ -6,7 +6,7 @@
 
 - name: install specific packages
   apt:
-          name: 'sudo, git, python3-pip, fish, zsh, ssh, sudo'
+          name: 'sudo,git,python3-pip,fish,zsh,ssh,sudo'
           state: present
 
 - name: install powerline-shell
