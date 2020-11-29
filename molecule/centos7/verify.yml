@@ -1,0 +1,13 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify ansible account exists
+  gather_facts: false
+  hosts: all
+  become: true
+  vars:
+          ansible_user: ansible
+  tasks:
+          - name: Example assertion
+            gather_facts:
+                    parallel: no

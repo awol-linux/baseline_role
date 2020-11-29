@@ -27,6 +27,10 @@ centos 8:
     stage: converge
     script:
         - molecule test -s centos8
+centos 7:
+    stage: converge
+    script:
+        - molecule test -s centos7
 ubuntu 18.04:
     stage: converge
     script:
