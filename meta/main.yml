@@ -31,8 +31,8 @@ galaxy_info:
       versions:
           - 8
   #   - 25
-    - name: Ubuntu 
-      release: 
+    - name: Ubuntu
+      release:
         - bionic
         - focal
 

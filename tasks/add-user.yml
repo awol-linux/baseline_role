@@ -13,6 +13,7 @@
   blockinfile:
           path: /etc/sudoers.d/ansible
           create: true
+          mode: 0400
           block: |
                   ## allow ansible sudo access
                   ansible ALL=(ALL)       NOPASSWD: ALL
