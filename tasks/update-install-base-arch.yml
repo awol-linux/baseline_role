@@ -1,11 +1,11 @@
-#- name: update non arch packages
-  #  pacman:
-          #    update_cache: yes
-          # upgrade: yes
+- name: update non arch packages
+  pacman:
+          update_cache: yes
+          upgrade: yes
 
 - name: install pip on arch based system
   pacman:
-          name: 'sudo, git, python-pip, fish, zsh'
+          name: 'sudo, git, python-pip, fish, zsh ,openssh'
           state: present
 
 - name: install powerline-shell

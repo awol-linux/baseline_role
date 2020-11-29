@@ -3,7 +3,21 @@
       sudo_group: sudo
   when: ansible_facts['os_family'] == "Debian"
 
-- name: set sudo group for debian based systems
+- name: set sudo group for Redhat based systems
   set_fact:
       sudo_group: wheel
   when: ansible_facts['os_family'] == "RedHat"
+
+- name: set sudo group for Archlinux based systems
+  set_fact:
+      sudo_group: wheel
+  when: ansible_facts['os_family'] == "Archlinux"
+
+- name: allow sudo group access on archlinux
+  lineinfile:
+          path: /etc/sudoers
+          state: present
+          regexp: '^#%wheel ALL=(ALL) all'
+          line: '%wheel ALL=(ALL) ALL'
+          validate: 'visudo -cf %s'
+  when: ansible_facts['os_family'] == "Archlinux"

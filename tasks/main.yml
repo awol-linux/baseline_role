@@ -1,9 +1,6 @@
 ---
 # tasks file for basesetup
 
-- name: set sudo groups
-  import_tasks: set-sudo-groups.yml
-
 - name: install base software Ubuntu
   import_tasks: update-install-base-ubuntu.yml
   when: ansible_facts['os_family'] == "Debian"
@@ -15,6 +12,9 @@
 - name: install base software arch
   import_tasks: update-install-base-arch.yml
   when: ansible_facts['os_family'] == "Archlinux"
+
+- name: set sudo groups
+  import_tasks: set-sudo-groups.yml
 
 - name: add ansible user
   import_tasks: add-user.yml
