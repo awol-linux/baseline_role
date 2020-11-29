@@ -7,7 +7,15 @@
 
 - name: install base software Redhat
   import_tasks: update-install-base-centos.yml
-  when: ansible_facts['os_family'] == "RedHat"
+  when:
+        - ansible_facts['os_family'] == "RedHat"
+        - ansible_facts['distribution_major_version'] == "8"
+
+- name: install base software Redhat
+  import_tasks: update-install-base-centos7.yml
+  when:
+        - ansible_facts['os_family'] == "RedHat"
+        - ansible_facts['distribution_major_version'] == "7"
 
 - name: install base software arch
   import_tasks: update-install-base-arch.yml
