@@ -1,6 +1,9 @@
 ---
 image: docker:stable-dind
 
+stages:
+    - lint
+    - converge
 services:
   - docker:dind
 
@@ -16,7 +19,23 @@ before_script:
   - ansible --version
   - molecule --version
 
-molecule:
-  stage: test
-  script:
-    - molecule test
+lint:
+    stage: lint
+    script:
+        - molecule lint
+centos 8:
+    stage: converge
+    script:
+        - molecule test -s centos8
+ubuntu 18.04:
+    stage: converge
+    script:
+        - molecule test -s ubuntu1804
+ubuntu 20.04:
+    stage: converge
+    script:
+        - molecule test -s ubuntu2004
+archlinux:
+    stage: converge
+    script:
+        - molecule test -s archlinux

@@ -1,0 +1,60 @@
+---
+dependency:
+  name: galaxy
+  options:
+    ignore-certs: True
+    ignore-errors: True
+    role-file: molecule/default/requirements.yml
+driver:
+  name: docker 
+platforms:
+  - name: centos8
+    image: docker.io/library/centos:latest
+    pre_build_image: true  
+provisioner:
+  name: ansible
+  # ssh_connection:
+  #        pipeline: true
+  # log: true
+scenario:
+  create_sequence:
+    - dependency
+    - create
+    - prepare
+  check_sequence:
+    - dependency
+    - cleanup
+    - destroy
+    - create
+    - prepare
+    - converge
+    - check
+    - destroy
+  converge_sequence:
+    - dependency
+    - create
+    - prepare
+    - converge
+  destroy_sequence:
+    - dependency
+    - cleanup
+    - destroy
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
+verifier:
+  name: ansible
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
