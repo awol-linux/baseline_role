@@ -25,83 +25,74 @@ centos 8:
     script:
         - source /opt/ansible28/bin/activate
         - molecule test -s centos8
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s centos8
+
 centos 7:
     stage: ansible 2.8
     script:
         - source /opt/ansible28/bin/activate
         - molecule test -s centos7
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s centos7
+
 ubuntu 18.04:
     stage: ansible 2.8
     script:
         - source /opt/ansible28/bin/activate
         - molecule test -s ubuntu1804
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s ubuntu1804
+
 ubuntu 20.04:
     stage: ansible 2.8
     script:
         - source /opt/ansible28/bin/activate
+        - molecule test -s ubuntu2004
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
         - molecule test -s ubuntu2004
 archlinux:
     stage: ansible 2.8
     script:
         - source /opt/ansible28/bin/activate
         - molecule test -s archlinux
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s archlinux   
 fedora 31:
     stage: ansible 2.8
     script:
         - source /opt/ansible28/bin/activate
         - molecule test -s fedora31
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s fedora31
+
 fedora 32:
     stage: ansible 2.8
     script:
         - source /opt/ansible28/bin/activate
         - molecule test -s fedora32
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s fedora32
+
 fedora 33:
     stage: ansible 2.8
     script:
         - source /opt/ansible28/bin/activate
         - molecule test -s fedora33
-
-
-
-
-
-
-centos 8:
-    stage: ansible 2.9
-    script:
-        - source /opt/ansible29/bin/activate
-        - molecule test -s centos8
-centos 7:
-    stage: ansible 2.9
-    script:
-        - source /opt/ansible29/bin/activate
-        - molecule test -s centos7
-ubuntu 18.04:
-    stage: ansible 2.9
-    script:
-        - source /opt/ansible29/bin/activate
-        - molecule test -s ubuntu1804
-ubuntu 20.04:
-    stage: ansible 2.9
-    script:
-        - source /opt/ansible29/bin/activate
-        - molecule test -s ubuntu2004
-archlinux:
-    stage: ansible 2.9
-    script:
-        - source /opt/ansible29/bin/activate
-        - molecule test -s archlinux
-fedora 31:
-    stage: ansible 2.9
-    script:
-        - source /opt/ansible29/bin/activate
-        - molecule test -s fedora31
-fedora 32:
-    stage: ansible 2.9
-    script:
-        - source /opt/ansible29/bin/activate
-        - molecule test -s fedora32
-fedora 33:
     stage: ansible 2.9
     script:
         - source /opt/ansible29/bin/activate
