@@ -32,7 +32,7 @@ galaxy_info:
           - 8
   #   - 25
     - name: Ubuntu
-      release:
+      versions:
         - bionic
         - focal
 
