@@ -1,9 +1,11 @@
 ---
-image: awollinux/dind-molecule:latest
+image: awollinux/dind-molecule:2.0
 
 stages:
     - lint
-    - converge
+    - ansible 2.8
+    - ansible 2.9
+    - ansible 2.10
 services:
   - docker:dind
 
@@ -17,24 +19,149 @@ before_script:
 lint:
     stage: lint
     script:
+        - source /opt/ansible28/bin/activate
         - molecule lint
-centos 8:
-    stage: converge
+
+Centos 8 2.8:
+    stage: ansible 2.8
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s centos8
-centos 7:
-    stage: converge
+
+Centos 8 2.9:    
+    stage: ansible 2.9
     script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s centos8
+
+Centos 8 2.10:    
+    stage: ansible 2.10
+    script:
+        - source /opt/ansible210/bin/activate
+        - molecule test -s centos8
+
+Centos 7 2.8:
+    stage: ansible 2.8
+    script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s centos7
-ubuntu 18.04:
-    stage: converge
+
+Centos 7 2.9:
+    stage: ansible 2.9
     script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s centos7
+
+Centos 7 2.10:
+    stage: ansible 2.10
+    script:
+        - source /opt/ansible210/bin/activate
+        - molecule test -s centos7
+
+Ubuntu 18.04 2.8:
+    stage: ansible 2.8
+    script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s ubuntu1804
-ubuntu 20.04:
-    stage: converge
+
+Ubuntu 18.04 2.9:
+    stage: ansible 2.9
     script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s ubuntu1804
+
+Ubuntu 18.04 2.10:
+    stage: ansible 2.10
+    script:
+        - source /opt/ansible210/bin/activate
+        - molecule test -s ubuntu1804
+
+Ubuntu 20.04 2.8:
+    stage: ansible 2.8
+    script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s ubuntu2004
-archlinux:
-    stage: converge
+
+Ubuntu 20.04 2.9:
+    stage: ansible 2.9
     script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s ubuntu2004
+
+Ubuntu 20.04 2.10:
+    stage: ansible 2.10
+    script:
+        - source /opt/ansible210/bin/activate
+        - molecule test -s ubuntu2004
+
+Archlinux 2.8:
+    stage: ansible 2.8
+    script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s archlinux
+
+Archlinux 2.9:
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s archlinux
+
+Archlinux 2.10:
+    stage: ansible 2.10
+    script:
+        - source /opt/ansible210/bin/activate
+        - molecule test -s archlinux
+
+Fedora 31 2.8:
+    stage: ansible 2.8
+    script:
+        - source /opt/ansible28/bin/activate
+        - molecule test -s fedora31
+
+Fedora 31 2.9:
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s fedora31
+
+Fedora 31 2.10:
+    stage: ansible 2.10
+    script:
+        - source /opt/ansible210/bin/activate
+        - molecule test -s fedora31
+
+Fedora 32 2.8:
+    stage: ansible 2.8
+    script:
+        - source /opt/ansible28/bin/activate
+        - molecule test -s fedora32
+
+Fedora 32 2.9:
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s fedora32
+
+Fedora 32 2.10:
+    stage: ansible 2.10
+    script:
+        - source /opt/ansible210/bin/activate
+        - molecule test -s fedora32
+
+Fedora 33 2.8:
+    stage: ansible 2.8
+    script:
+        - source /opt/ansible28/bin/activate
+        - molecule test -s fedora33
+
+Fedora 33 2.9:
+    stage: ansible 2.9
+    script:
+        - source /opt/ansible29/bin/activate
+        - molecule test -s fedora33
+
+Fedora 33 2.10:
+    stage: ansible 2.10
+    script:
+        - source /opt/ansible210/bin/activate
+        - molecule test -s fedora33
