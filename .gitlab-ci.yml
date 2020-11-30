@@ -1,9 +1,9 @@
 ---
-image: awollinux/dind-molecule:latest
+image: awollinux/dind-molecule:2.0
 
 stages:
     - lint
-    - converge
+    - ansible28
 services:
   - docker:dind
 
@@ -17,36 +17,45 @@ before_script:
 lint:
     stage: lint
     script:
+        - source /opt/ansible28/bin/activate
         - molecule lint
 centos 8:
-    stage: converge
+    stage: ansible28
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s centos8
 centos 7:
-    stage: converge
+    stage: ansible28
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s centos7
 ubuntu 18.04:
-    stage: converge
+    stage: ansible28
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s ubuntu1804
 ubuntu 20.04:
-    stage: converge
+    stage: ansible28
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s ubuntu2004
 archlinux:
-    stage: converge
+    stage: ansible28
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s archlinux
 fedora 31:
-    stage: converge
+    stage: ansible28
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s fedora31
 fedora 32:
-    stage: converge
+    stage: ansible28
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s fedora32
 fedora 33:
-    stage: converge
+    stage: ansible28
     script:
+        - source /opt/ansible28/bin/activate
         - molecule test -s fedora33
