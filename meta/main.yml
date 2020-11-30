@@ -30,6 +30,7 @@ galaxy_info:
     - name: EL
       versions:
           - 8
+          - 7
   #   - 25
     - name: Ubuntu
       versions:
