@@ -9,7 +9,7 @@
   import_tasks: update-install-base-dnf.yml
   when:
         - ansible_facts['os_family'] == "RedHat"
-        - ansible_facts['distribution_major_version'] == "8" or "31" or "32" or "33"
+        - ansible_facts['distribution_major_version'] == "8" or ansible_facts['distribution_major_version'] | int >= 31
 
 - name: install base software Redhat
   import_tasks: update-install-base-centos7.yml
