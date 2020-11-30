@@ -38,3 +38,15 @@ archlinux:
     stage: converge
     script:
         - molecule test -s archlinux
+fedora 31:
+    stage: converge
+    script:
+        - molecule test -s fedora31
+fedora 32:
+    stage: converge
+    script:
+        - molecule test -s fedora32
+fedora 33:
+    stage: converge
+    script:
+        - molecule test -s fedora33
